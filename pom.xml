@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.proyecto_admin_redes/com.example.proyecto_admin_redes.HelloApplication
+                                com.example.proyecto_admin_redes/com.example.proyecto_admin_redes.AlfaNetwork
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
