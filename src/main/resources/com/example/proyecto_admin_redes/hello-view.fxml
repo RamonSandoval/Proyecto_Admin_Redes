@@ -47,5 +47,10 @@
       <Pane fx:id="invalidIP" layoutX="323.0" layoutY="73.0" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: #8d8d8d;" visible="false" />
       <Text fx:id="textInvalidIP" fill="WHITE" layoutX="349.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.8125" />
       <TextArea id="listIP" fx:id="listIP" editable="false" layoutX="25.0" layoutY="143.0" prefHeight="122.0" prefWidth="284.0" style="-fx-border-color: white; -fx-border-radius: 4px; -fx-border-width: 2px; -fx-text-fill: black;" />
+      <Button layoutX="132.0" layoutY="109.0" onAction="#Scann"  style="-fx-background-color: #7495ed;" text="Scan" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </Pane>
