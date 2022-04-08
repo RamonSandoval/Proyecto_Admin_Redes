@@ -45,15 +45,13 @@ public class AlfaNetworkController {
         try {
             ping = InetAddress.getByName(ip);
             if(ping.isReachable(3000)){
-                System.out.println(ip+" - Activo");
                 validIP.setVisible(true);
                 direccionIp.setText("");
-                textValidIP.setText("Activo");
-                listIP.appendText(ip +"\n");
+                listIP.appendText(ip +" - Activo\n");
             }else {
-                System.out.println(ip+" - no Activo");
+                listIP.appendText(ip+" - No Activo\n");
                 invalidIP.setVisible(true);
-                textInvalidIP.setText("Inactivo");
+
             }
         } catch (IOException ex) { System.out.println(ex); }
     }
@@ -64,6 +62,7 @@ public class AlfaNetworkController {
     @FXML
     protected void clearIP (ActionEvent event){
         direccionIp.setText("");
+        listIP.setText("");
 
     }
 
