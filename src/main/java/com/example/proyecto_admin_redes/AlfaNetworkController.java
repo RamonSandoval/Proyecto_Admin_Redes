@@ -8,6 +8,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.*;
+import java.util.regex.Pattern;
 
 public class AlfaNetworkController {
     @FXML
