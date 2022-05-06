@@ -10,7 +10,7 @@ import java.io.IOException;
 public class AlfaNetwork extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(AlfaNetwork.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AlfaNetwork.class.getResource("admin.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 430, 282);
         // stage.getIcons().add(new Image("/img/logo_AN.png"));
         stage.setTitle("Alfa Network Administrator");
