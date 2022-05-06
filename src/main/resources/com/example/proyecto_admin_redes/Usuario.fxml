@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="282.0" prefWidth="430.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.AlfaNetworkController">
+   <children>
+      <Label layoutX="25.0" layoutY="73.0" text="Dirección Ip" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="direccionIp" layoutX="122.0" layoutY="71.0" prefHeight="25.0" prefWidth="186.0" />
+   
+             <Label fx:id="welcomeText" layoutX="185.0" layoutY="204.0" prefHeight="17.0" prefWidth="79.0" />
+       <Button layoutX="244.0" layoutY="109.0" onAction="#onSearchClick" style="-fx-background-color: #7495ed;" text="Verificar" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <MenuBar prefHeight="25.0" prefWidth="430.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#exitApp" text="Cerrar" />
+                  <MenuItem mnemonicParsing="false" text="Buscar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Acerca del Programa" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="185.0" layoutY="109.0" onAction="#clearIP" style="-fx-background-color: #f7a035;" text="Borrar" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Text fx:id="errorIP" fill="RED" layoutX="147.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="148.5078125" />
+      <Pane fx:id="validIP" layoutX="323.0" layoutY="73.0" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: #73ff00;" visible="false" />
+      <Text fx:id="textValidIP" fill="WHITE" layoutX="349.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="39.13671875" />
+      <Pane fx:id="invalidIP" layoutX="323.0" layoutY="73.0" prefHeight="25.0" prefWidth="24.0" style="-fx-background-color: #8d8d8d;" visible="false" />
+      <Text fx:id="textInvalidIP" fill="WHITE" layoutX="349.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.8125" />
+      <TextArea id="listIP" fx:id="listIP" editable="false" layoutX="25.0" layoutY="143.0" prefHeight="122.0" prefWidth="284.0" style="-fx-border-color: white; -fx-border-radius: 4px; -fx-border-width: 2px; -fx-text-fill: black;" />
+   </children>
+</Pane>
