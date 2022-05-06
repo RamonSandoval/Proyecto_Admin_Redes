@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F7F7FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="405.0" layoutY="266.0" mnemonicParsing="false" text="Ingresar" />
+      <Label fx:id="lblUsuario" layoutX="429.0" layoutY="81.0" text="Usuario" />
+      <TextField fx:id="txtUsuario" layoutX="359.0" layoutY="117.0" />
+      <TextField fx:id="txtPassword" layoutX="359.0" layoutY="200.0" />
+      <Label layoutX="417.0" layoutY="168.0" text="Contraseña" />
+      <Pane layoutY="-4.0" prefHeight="406.0" prefWidth="323.0" style="-fx-background-color: FE5F55;">
+         <children>
+            <ImageView fitHeight="218.0" fitWidth="213.0" layoutX="62.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../ite.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</Pane>
