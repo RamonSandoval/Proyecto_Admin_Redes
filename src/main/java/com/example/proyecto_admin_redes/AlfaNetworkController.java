@@ -8,9 +8,19 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.regex.Pattern;
 
 public class AlfaNetworkController {
+
+    private ListaEnlazadaDirecciones list = new ListaEnlazadaDirecciones();
+    private DireccionIP direccionIP = new DireccionIP();
+
+    Conexion conexion = new Conexion();
+    Crud crud = new Crud();
+    PreparedStatement ps;
+    ResultSet rs;
     @FXML
     private Label welcomeText;
     @FXML
