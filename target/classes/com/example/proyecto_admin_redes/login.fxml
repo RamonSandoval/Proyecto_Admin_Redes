@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F7F7FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="405.0" layoutY="266.0" mnemonicParsing="false" text="Ingresar" />
-      <Label fx:id="lblUsuario" layoutX="429.0" layoutY="81.0" text="Usuario" />
-      <TextField fx:id="txtUsuario" layoutX="359.0" layoutY="117.0" />
-      <TextField fx:id="txtPassword" layoutX="359.0" layoutY="200.0" />
-      <Label layoutX="417.0" layoutY="168.0" text="Contraseña" />
-      <Pane layoutY="-4.0" prefHeight="406.0" prefWidth="323.0" style="-fx-background-color: FE5F55;">
-         <children>
-            <ImageView fitHeight="218.0" fitWidth="213.0" layoutX="62.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../ite.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
+      <Button layoutX="448.0" layoutY="255.0" mnemonicParsing="false" style="-fx-background-color: #7495ed;" text="Ingresar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="lblUsuario" layoutX="315.0" layoutY="115.0" text="Usuario" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TextField fx:id="txtUsuario" layoutX="315.0" layoutY="143.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="txtPassword" layoutX="315.0" layoutY="219.0" prefHeight="25.0" prefWidth="196.0" />
+      <Label layoutX="315.0" layoutY="191.0" text="Contraseña" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Line endX="300.0" layoutX="170.0" layoutY="200.0" rotate="90.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+      <CheckBox layoutX="316.0" layoutY="258.0" mnemonicParsing="false" text="Remember me" textFill="WHITE" />
+      <Text fill="WHITE" layoutX="489.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version v1.0.2612.1" />
+      <ImageView fitHeight="178.0" fitWidth="187.0" layoutX="46.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../img/logo_AN.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="58.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alfa Network" wrappingWidth="133.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="82.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrator">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

@@ -1,5 +1,6 @@
 package com.example.proyecto_admin_redes;
 
+import Base.db.ListaEnlazadaDirecciones;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
