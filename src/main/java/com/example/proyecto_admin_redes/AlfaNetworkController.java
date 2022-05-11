@@ -73,7 +73,19 @@ public class AlfaNetworkController {
 
     @FXML
     protected void Scann(ActionEvent event) throws UnknownHostException {
+        String item = "";
+        listIP.setText("");
+        list.eliminarLista();
 
+        list = crud.listDirecciones();
+
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            direccionIP = list.getNodoDeLista(i);
+            item += direccionIP.getEstatus() + "\t\t\t\t" + direccionIP.getIp() + "\t\t" + direccionIP.getName() + "\n";
+        }
+        listIP.setText(item);
+        // label.setText("Se Actualizó La Lista!!");
     }
 
     @FXML
