@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 public class AlfaNetworkController {
 
     private ListaEnlazadaDirecciones list = new ListaEnlazadaDirecciones();
-    private Ips direccionIP = new Ips();
+    private Ips direccion_ip = new Ips();
 
     ConexionBD conexion = new ConexionBD();
     Crud crud = new Crud();
@@ -63,15 +63,18 @@ public class AlfaNetworkController {
         if (direccionIp.getText() == ("")) {
             errorIP.setText("Ingrese una direccion IP");
         } else
+            direccion_ip.setIp(ip);
             try {
                 ping = InetAddress.getByName(ip);
                 if (ping.isReachable(3000)) {
                     validIP.setVisible(true);
                     direccionIp.setText("");
                     listIP.appendText(ip + " - Activo\n");
+                    crud.create(direccion_ip);
                 } else {
                     listIP.appendText(ip + " - No Activo\n");
                     invalidIP.setVisible(true);
+                    crud.create(direccion_ip);
                 }
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -80,6 +83,7 @@ public class AlfaNetworkController {
 
     @FXML
     protected void Scann(ActionEvent event) throws UnknownHostException {
+
         String item = "";
         listIP.setText("");
         list.eliminarLista();
@@ -88,11 +92,12 @@ public class AlfaNetworkController {
 
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            direccionIP = list.getNodoDeLista(i);
-            item += direccionIP.getEstatus() + "\t\t\t\t" + direccionIP.getIp() + "\t\t";
+            direccion_ip = list.getNodoDeLista(i);
+            item += direccion_ip.getEstatus() + "\t\t\t\t" + direccion_ip.getIp() + "\t\t";
         }
         listIP.setText(item);
         welcomeText.setText("Se Actualizó La Lista!!");
+
     }
 
     @FXML
