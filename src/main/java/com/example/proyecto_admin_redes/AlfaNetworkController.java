@@ -1,5 +1,8 @@
 package com.example.proyecto_admin_redes;
 
+import Base.db.ConexionBD;
+import Base.db.Crud;
+import Base.db.Ips;
 import Base.db.ListaEnlazadaDirecciones;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,9 +19,9 @@ import java.util.regex.Pattern;
 public class AlfaNetworkController {
 
     private ListaEnlazadaDirecciones list = new ListaEnlazadaDirecciones();
-    private DireccionIP direccionIP = new DireccionIP();
+    private Ips direccionIP = new Ips();
 
-    Conexion conexion = new Conexion();
+    ConexionBD conexion = new ConexionBD();
     Crud crud = new Crud();
     PreparedStatement ps;
     ResultSet rs;
