@@ -27,7 +27,7 @@ public class ListaEnlazadaDirecciones
                     aux2 = aux;
 
                 }else {
-                    aux2.setSig(aux2.getNext().getNext());
+                    aux2.setNext(aux2.getNext().getNext());
                 }
             }
             aux = aux.getNext();
@@ -39,7 +39,7 @@ public class ListaEnlazadaDirecciones
         while (aux != null)
         {
             aux = aux.getNext();
-            inicio.setSig(null);
+            inicio.setNext(null);
             inicio = aux;
         }
     }

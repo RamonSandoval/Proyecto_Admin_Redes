@@ -22,7 +22,7 @@ public class NodoDireccionIP
         return next;
     }
 
-    public void setSig(NodoDireccionIP sig) {
+    public void setNext(NodoDireccionIP sig) {
         this.next= next;
     }
 }
