@@ -18,7 +18,7 @@ public class ConexionBD {
             con=DriverManager.getConnection(url, login ,password);
 
             if(con !=null){
-                System.out.println("Connecting database ["+con+"] ok");
+                System.out.println("Connecting database ["+con+"] okis va bien");
             }
 
         } catch (SQLException e) { //excepción generada por la conexión
