@@ -102,7 +102,7 @@ public class Crud {
               di = new Ips();
             }
         }catch (SQLException e){
-            System.out.println("listaCRUD");
+            System.out.println("Esta vacío");
             System.out.println(e.getMessage());
         }
 
