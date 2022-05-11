@@ -70,10 +70,13 @@ public class AlfaNetworkController {
                     validIP.setVisible(true);
                     direccionIp.setText("");
                     listIP.appendText(ip + " - Activo\n");
+                    direccion_ip.setEstatus("Activo");
                     crud.create(direccion_ip);
+
                 } else {
                     listIP.appendText(ip + " - No Activo\n");
                     invalidIP.setVisible(true);
+                    direccion_ip.setEstatus("No Activo");
                     crud.create(direccion_ip);
                 }
             } catch (IOException ex) {
