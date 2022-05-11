@@ -52,5 +52,10 @@
           <TableColumn fx:id="estatus" prefWidth="125.0" text="ESTATUS" />
         </columns>
       </TableView>
+      <Button layoutX="436.0" layoutY="242.0" onAction="#scanIP" style="-fx-background-color: #f7a035;" text="Scan" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </Pane>
