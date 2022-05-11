@@ -44,6 +44,13 @@ public class AlfaNetworkController {
     @FXML
     private TextArea listIP;
 
+    private boolean validarIP(String ip) {
+        boolean val = false;
+        String regex = "(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}";
+        val = Pattern.matches(regex, ip);
+        return val;
+    }
+
     @FXML
     protected void onSearchClick(ActionEvent event) {
         InetAddress ping;
