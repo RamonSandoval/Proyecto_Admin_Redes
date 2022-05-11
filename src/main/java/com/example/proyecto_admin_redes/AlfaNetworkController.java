@@ -85,7 +85,7 @@ public class AlfaNetworkController {
             item += direccionIP.getEstatus() + "\t\t\t\t" + direccionIP.getIp() + "\t\t";
         }
         listIP.setText(item);
-        // label.setText("Se Actualizó La Lista!!");
+        welcomeText.setText("Se Actualizó La Lista!!");
     }
 
     @FXML
