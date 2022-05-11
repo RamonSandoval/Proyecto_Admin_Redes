@@ -82,7 +82,7 @@ public class AlfaNetworkController {
         int size = list.size();
         for (int i = 0; i < size; i++) {
             direccionIP = list.getNodoDeLista(i);
-            item += direccionIP.getEstatus() + "\t\t\t\t" + direccionIP.getIp() + "\t\t" + direccionIP.getName() + "\n";
+            item += direccionIP.getEstatus() + "\t\t\t\t" + direccionIP.getIp() + "\t\t";
         }
         listIP.setText(item);
         // label.setText("Se Actualizó La Lista!!");
