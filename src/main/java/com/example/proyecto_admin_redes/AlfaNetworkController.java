@@ -62,6 +62,7 @@ public class AlfaNetworkController {
         textValidIP.setText("");
         textInvalidIP.setText("");
 
+
         if (direccionIp.getText() == ("")) {
             errorIP.setText("Ingrese una direccion IP");
         } else
@@ -71,14 +72,12 @@ public class AlfaNetworkController {
                 if (ping.isReachable(3000)) {
                     validIP.setVisible(true);
                     direccionIp.setText("");
-                    listIP.appendText("\t\t"+ip+"\n");
-                    Estatus.appendText("\t\tActivo\n");
+                    listIP.appendText("\t"+ip.replaceAll("/","")+"\t\t\t\t\tActivo\n");
                     direccion_ip.setEstatus("Activo");
                     crud.create(direccion_ip);
 
                 } else {
-                    listIP.appendText("\t\t"+ip+"\n");
-                    Estatus.appendText("\t\tNo Activo\n");
+                    listIP.appendText("\t"+ip.replaceAll("/","")+ " \t\t\t\t\tNo activo\n");
                     invalidIP.setVisible(true);
                     direccion_ip.setEstatus("No Activo");
                     crud.create(direccion_ip);
@@ -86,6 +85,8 @@ public class AlfaNetworkController {
             } catch (IOException ex) {
                 System.out.println(ex);
             }
+
+
     }
 
     @FXML
@@ -95,18 +96,17 @@ public class AlfaNetworkController {
         int con_d=0;
         int con_n=0;
         int i;
-        String seg="10.0.0.";
+        String seg="192.168.1.";
         InetAddress ip;
         try{
-            for(i=0;i<10; i++){
+            for(i=70;i<80; i++){
                 ip=InetAddress.getByName(seg+i);
                 if(ip.isReachable(250)){
-                    listIP.appendText("\t\t"+ip+"\n");
-                    Estatus.appendText("\t\tActivo\n");
+                    listIP.appendText("\t"+ip+"\t\t\t\t\tActivo\n");
+
                     con_d++;
                 }else{
-                    listIP.appendText("\t\t"+ip+"\n");
-                    Estatus.appendText("\t\tNo Activo\n");
+                    listIP.appendText("\t"+ip+" \t\t\t\t\tNo activo\n");
                     con_n++;
                 }
             }
