@@ -5,7 +5,7 @@ import java.net.InetAddress;
 
 public class ScanNet {
     public static void main(String[] args) throws Exception {
-        int[] bounds = ScanNet.rangeFromCidr("192.168.1.255/24");
+        int[] bounds = ScanNet.rangeFromCidr("10.0.0.255/24");
 
         for (int i = bounds[0]; i <= bounds[1]; i++) {
             String address = InetRange.intToIp(i);

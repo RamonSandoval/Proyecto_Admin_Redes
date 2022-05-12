@@ -90,15 +90,17 @@ public class AlfaNetworkController {
 
     @FXML
     protected void Scann(ActionEvent event) throws UnknownHostException {
+        listIP.setText("");
+        Estatus.setText("");
         int con_d=0;
         int con_n=0;
         int i;
         String seg="10.0.0.";
-        InetAddress ip=null;
+        InetAddress ip;
         try{
             for(i=0;i<10; i++){
-                ip=InetAddress.getByName( seg+i);
-                if( ip. isReachable(250)){
+                ip=InetAddress.getByName(seg+i);
+                if(ip.isReachable(250)){
                     listIP.appendText("\t\t"+ip+"\n");
                     Estatus.appendText("\t\tActivo\n");
                     con_d++;
