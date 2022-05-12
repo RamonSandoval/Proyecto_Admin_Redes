@@ -43,6 +43,8 @@ public class AlfaNetworkController {
     private Text textInvalidIP;
     @FXML
     private TextArea listIP;
+    @FXML
+    private TextArea Estatus;
 
     private boolean validarIP(String ip) {
         boolean val = false;
@@ -69,12 +71,14 @@ public class AlfaNetworkController {
                 if (ping.isReachable(3000)) {
                     validIP.setVisible(true);
                     direccionIp.setText("");
-                    listIP.appendText(ip + " - Activo\n");
+                    listIP.appendText("\t\t"+ip+"\n");
+                    Estatus.appendText("\t\tActivo\n");
                     direccion_ip.setEstatus("Activo");
                     crud.create(direccion_ip);
 
                 } else {
-                    listIP.appendText(ip + " - No Activo\n");
+                    listIP.appendText("\t\t"+ip+"\n");
+                    Estatus.appendText("\t\tNo Activo\n");
                     invalidIP.setVisible(true);
                     direccion_ip.setEstatus("No Activo");
                     crud.create(direccion_ip);
@@ -96,7 +100,7 @@ public class AlfaNetworkController {
         int size = list.size();
         for (int i = 0; i < size; i++) {
             direccion_ip = list.getNodoDeLista(i);
-            item += direccion_ip.getEstatus() + "\t\t\t\t" + direccion_ip.getIp() + "\t\t";
+            item += direccion_ip.getEstatus() + "\t" + direccion_ip.getIp() ;
         }
         listIP.setText(item);
         welcomeText.setText("Se Actualizó La Lista!!");
@@ -112,6 +116,9 @@ public class AlfaNetworkController {
     protected void clearIP(ActionEvent event) {
         direccionIp.setText("");
         listIP.setText("");
+        Estatus.setText("");
+        invalidIP.setVisible(false);
+        validIP.setVisible(false);
 
     }
 
