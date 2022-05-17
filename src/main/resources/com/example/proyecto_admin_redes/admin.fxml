@@ -72,7 +72,7 @@
             </ImageView>
             </children>
         </Pane>
-      <TextArea fx:id="listIP" layoutX="14.0" layoutY="103.0" prefHeight="172.0" prefWidth="369.0">
+      <TextArea fx:id="listIP" layoutX="14.0" layoutY="103.0" prefHeight="172.0" prefWidth="469.0">
          <font>
             <Font size="14.0" />
          </font></TextArea>

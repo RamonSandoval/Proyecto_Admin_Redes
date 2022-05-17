@@ -7,9 +7,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.AlfaNetworkController">
    <children>
-      <Button layoutX="448.0" layoutY="255.0" mnemonicParsing="false" style="-fx-background-color: #7495ed;" text="Ingresar" textFill="WHITE">
+      <Button fx:id="btnLogin" layoutX="448.0" layoutY="255.0" mnemonicParsing="false" onAction="#btnLogin" style="-fx-background-color: #7495ed;" text="Ingresar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
@@ -26,11 +26,6 @@
       <Line endX="300.0" layoutX="170.0" layoutY="200.0" rotate="90.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
       <CheckBox layoutX="316.0" layoutY="258.0" mnemonicParsing="false" text="Remember me" textFill="WHITE" />
       <Text fill="WHITE" layoutX="489.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version v1.0.2612.1" />
-      <ImageView fitHeight="178.0" fitWidth="187.0" layoutX="46.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../img/logo_AN.png" />
-         </image>
-      </ImageView>
       <Text fill="WHITE" layoutX="58.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alfa Network" wrappingWidth="133.0">
          <font>
             <Font size="22.0" />

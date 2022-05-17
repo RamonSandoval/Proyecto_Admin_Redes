@@ -6,14 +6,25 @@ import Base.db.Ips;
 import Base.db.ListaEnlazadaDirecciones;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.control.Label;
+import javafx.scene.text.Font;
+import javafx.scene.paint.Color;
+
 
 import java.io.IOException;
 import java.net.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.format.TextStyle;
 import java.util.regex.Pattern;
 
 public class AlfaNetworkController {
@@ -45,6 +56,12 @@ public class AlfaNetworkController {
     private TextArea listIP;
     @FXML
     private TextArea Estatus;
+    @FXML
+    private TextField txtUsuario;
+    @FXML
+    private TextField txtpassword;
+    @FXML
+    private Button btnLogin;
 
     private boolean validarIP(String ip) {
         boolean val = false;
@@ -62,6 +79,10 @@ public class AlfaNetworkController {
         textValidIP.setText("");
         textInvalidIP.setText("");
 
+        //Mostrar estatus de la IP
+        Text statValid = new Text("000");
+
+
 
         if (direccionIp.getText() == ("")) {
             errorIP.setText("Ingrese una direccion IP");
@@ -70,14 +91,16 @@ public class AlfaNetworkController {
             try {
                 ping = InetAddress.getByName(ip);
                 if (ping.isReachable(3000)) {
+
                     validIP.setVisible(true);
                     direccionIp.setText("");
-                    listIP.appendText("\t"+ip.replaceAll("/","")+"\t\t\t\t\tActivo\n");
+                    listIP.appendText("\t"+ip.replaceAll("/","")+"\t\t\t\tActivo" +"\t\t\t"+statValid);
                     direccion_ip.setEstatus("Activo");
                     crud.create(direccion_ip);
 
+
                 } else {
-                    listIP.appendText("\t"+ip.replaceAll("/","")+ " \t\t\t\t\tNo activo\n");
+                    listIP.appendText("\t"+ip.replaceAll("/","")+ " \t\t\t\t\tNo activo"+"\t\t\t");
                     invalidIP.setVisible(true);
                     direccion_ip.setEstatus("No Activo");
                     crud.create(direccion_ip);
@@ -85,6 +108,8 @@ public class AlfaNetworkController {
             } catch (IOException ex) {
                 System.out.println(ex);
             }
+
+
 
 
     }
@@ -103,7 +128,6 @@ public class AlfaNetworkController {
                 ip=InetAddress.getByName(seg+i);
                 if(ip.isReachable(250)){
                     listIP.appendText("\t"+ip+"\t\t\t\t\tActivo\n");
-
                     con_d++;
                 }else{
                     listIP.appendText("\t"+ip+" \t\t\t\t\tNo activo\n");
@@ -143,5 +167,26 @@ public class AlfaNetworkController {
         validIP.setVisible(false);
 
     }
+
+    @FXML
+    private void btnLogin(ActionEvent event){
+        Object evt = event.getSource();
+        if(evt.equals(btnLogin)){
+            if(!txtUsuario.getText().isEmpty() && !txtpassword.getText().isEmpty()){
+                String user = txtUsuario.getText();
+                String pass = txtpassword.getText();
+
+            }else{
+                System.out.println("Error: Favor de ingresar un usuario y contraseña");
+
+            }
+
+        }
+
+
+    }
+
+
+
 
 }
