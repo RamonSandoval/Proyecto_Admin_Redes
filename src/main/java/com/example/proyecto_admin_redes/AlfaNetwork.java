@@ -13,7 +13,7 @@ public class AlfaNetwork extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
        // FXMLLoader fxmlLoader = new FXMLLoader(AlfaNetwork.class.getResource("admin.fxml"));
-        Scene scene = new Scene(root, 600, 313);
+        Scene scene = new Scene(root, 600, 400);
         // stage.getIcons().add(new Image("/img/logo_AN.png"));
         stage.setTitle("Alfa Network Administrator");
         stage.setResizable(false);

@@ -26,15 +26,29 @@
       <Line endX="300.0" layoutX="170.0" layoutY="200.0" rotate="90.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
       <CheckBox layoutX="316.0" layoutY="258.0" mnemonicParsing="false" text="Remember me" textFill="WHITE" />
       <Text fill="WHITE" layoutX="489.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version v1.0.2612.1" />
-      <Text fill="WHITE" layoutX="58.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alfa Network" wrappingWidth="133.0">
+      <Text fill="WHITE" layoutX="73.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alfa Network" wrappingWidth="133.0">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="82.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrator">
+      <Text fill="WHITE" layoutX="97.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrator">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
+      <Text fx:id="errorUser" fill="RED" layoutX="314.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese un Usuario y Contraseña" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Pane layoutX="56.0" layoutY="59.0" prefHeight="169.0" prefWidth="166.0" style="-fx-background-color: orange;">
+         <children>
+            <Text fill="WHITE" layoutX="41.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui va el logo" textAlignment="CENTER" wrappingWidth="84.5263671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </Pane>

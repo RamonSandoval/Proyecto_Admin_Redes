@@ -62,6 +62,8 @@ public class AlfaNetworkController {
     private TextField txtpassword;
     @FXML
     private Button btnLogin;
+    @FXML
+    private Text errorUser;
 
     private boolean validarIP(String ip) {
         boolean val = false;
@@ -177,7 +179,7 @@ public class AlfaNetworkController {
                 String pass = txtpassword.getText();
 
             }else{
-                System.out.println("Error: Favor de ingresar un usuario y contraseña");
+                errorUser.setVisible(true);
 
             }
 
