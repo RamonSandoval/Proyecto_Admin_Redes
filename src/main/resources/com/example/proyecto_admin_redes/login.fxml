@@ -7,24 +7,23 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.AlfaNetworkController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.Controller_Login">
    <children>
-      <Button fx:id="btnLogin" layoutX="448.0" layoutY="255.0" mnemonicParsing="false" onAction="#btnLogin" style="-fx-background-color: #7495ed;" text="Ingresar" textFill="WHITE">
+      <Button fx:id="btnLogin" layoutX="462.0" layoutY="259.0" mnemonicParsing="false" onAction="#btnLogin" style="-fx-background-color: #7495ed;" text="Ingresar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Label fx:id="lblUsuario" layoutX="315.0" layoutY="115.0" text="Usuario" textFill="WHITE">
+      <Label fx:id="lblUsuario" layoutX="329.0" layoutY="117.0" text="Usuario" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <TextField fx:id="txtUsuario" layoutX="315.0" layoutY="143.0" prefHeight="25.0" prefWidth="196.0" />
-      <TextField fx:id="txtPassword" layoutX="315.0" layoutY="219.0" prefHeight="25.0" prefWidth="196.0" />
-      <Label layoutX="315.0" layoutY="191.0" text="Contraseña" textFill="WHITE">
+      <TextField fx:id="txtUsuario" layoutX="329.0" layoutY="145.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="txtPassword" layoutX="329.0" layoutY="221.0" prefHeight="25.0" prefWidth="196.0" />
+      <Label layoutX="329.0" layoutY="193.0" text="Contraseña" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font></Label>
       <Line endX="300.0" layoutX="170.0" layoutY="200.0" rotate="90.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
-      <CheckBox layoutX="316.0" layoutY="258.0" mnemonicParsing="false" text="Remember me" textFill="WHITE" />
       <Text fill="WHITE" layoutX="489.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version v1.0.2612.1" />
       <Text fill="WHITE" layoutX="73.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alfa Network" wrappingWidth="133.0">
          <font>
@@ -41,14 +40,10 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Pane layoutX="56.0" layoutY="59.0" prefHeight="169.0" prefWidth="166.0" style="-fx-background-color: orange;">
-         <children>
-            <Text fill="WHITE" layoutX="41.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui va el logo" textAlignment="CENTER" wrappingWidth="84.5263671875">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
+      <ImageView fitHeight="181.0" fitWidth="172.0" layoutX="55.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/logo_AN.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

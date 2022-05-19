@@ -8,6 +8,7 @@ import java.sql.*;
 
 public class ConexionBD {
 
+
     static String bd="redes";
     static String login="root";
     static String password="";
@@ -39,7 +40,7 @@ public class ConexionBD {
     }
 
     public void disconnect(){
-        System.out.println("clocing database: ["+con+"]ok");
+        System.out.println("clocking database: ["+con+"]ok");
         if(con!=null)
         {
             try{

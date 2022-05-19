@@ -27,7 +27,7 @@ import java.sql.ResultSet;
 import java.time.format.TextStyle;
 import java.util.regex.Pattern;
 
-public class AlfaNetworkController {
+public class UserController {
 
     private ListaEnlazadaDirecciones list = new ListaEnlazadaDirecciones();
     private Ips direccion_ip = new Ips();
@@ -82,26 +82,26 @@ public class AlfaNetworkController {
             errorIP.setText("Ingrese una direccion IP");
         } else
             direccion_ip.setIp(ip);
-            try {
-                ping = InetAddress.getByName(ip);
-                if (ping.isReachable(3000)) {
+        try {
+            ping = InetAddress.getByName(ip);
+            if (ping.isReachable(3000)) {
 
-                    validIP.setVisible(true);
-                    direccionIp.setText("");
-                    listIP.appendText("\t"+ip.replaceAll("/","")+"\t\t\t\tActivo" +"\t\t\t"+statValid.getText());
-                    direccion_ip.setEstatus("Activo");
-                    crud.create(direccion_ip);
+                validIP.setVisible(true);
+                direccionIp.setText("");
+                listIP.appendText("\t"+ip.replaceAll("/","")+"\t\t\t\tActivo" +"\t\t\t"+statValid.getText());
+                direccion_ip.setEstatus("Activo");
+                crud.create(direccion_ip);
 
 
-                } else {
-                    listIP.appendText("\t"+ip.replaceAll("/","")+ " \t\t\t\t\tNo activo"+"\t\t\t");
-                    invalidIP.setVisible(true);
-                    direccion_ip.setEstatus("No Activo");
-                    crud.create(direccion_ip);
-                }
-            } catch (IOException ex) {
-                System.out.println(ex);
+            } else {
+                listIP.appendText("\t"+ip.replaceAll("/","")+ " \t\t\t\t\tNo activo"+"\t\t\t");
+                invalidIP.setVisible(true);
+                direccion_ip.setEstatus("No Activo");
+                crud.create(direccion_ip);
             }
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
 
 
 
