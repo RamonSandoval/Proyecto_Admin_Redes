@@ -17,7 +17,8 @@ public class AlfaNetwork extends Application {
         Scene scene = new Scene(root, 600, 400);
         // stage.getIcons().add(new Image("/img/logo_AN.png"));
         stage.setTitle("Alfa Network Administrator");
-        stage.setResizable(false);
+        stage.getIcons().add( new Image(getClass().getResourceAsStream("/img/logo_AN.png")));
+        //stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
 

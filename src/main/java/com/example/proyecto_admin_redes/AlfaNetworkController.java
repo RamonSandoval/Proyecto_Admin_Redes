@@ -18,6 +18,8 @@ import javafx.scene.text.Text;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 import javafx.scene.paint.Color;
+import javafx.scene.image.Image;
+
 
 
 import java.io.IOException;
@@ -74,7 +76,7 @@ public class AlfaNetworkController {
         textInvalidIP.setText("");
 
         //Mostrar estatus de la IP
-        Text statValid = new Text("0");
+        //Text statValid = new Text("0");
 
 
 
@@ -88,13 +90,13 @@ public class AlfaNetworkController {
 
                     validIP.setVisible(true);
                     direccionIp.setText("");
-                    listIP.appendText("\t"+ip.replaceAll("/","")+"\t\t\t\tActivo" +"\t\t\t"+statValid.getText());
+                    listIP.appendText("\t"+ip+"\t\t\t\t\t\tActivo\n");
                     direccion_ip.setEstatus("Activo");
                     crud.create(direccion_ip);
 
 
                 } else {
-                    listIP.appendText("\t"+ip.replaceAll("/","")+ " \t\t\t\t\tNo activo"+"\t\t\t");
+                    listIP.appendText("\t"+ip+ "\t\t\t\t\t\tNo activo\n");
                     invalidIP.setVisible(true);
                     direccion_ip.setEstatus("No Activo");
                     crud.create(direccion_ip);

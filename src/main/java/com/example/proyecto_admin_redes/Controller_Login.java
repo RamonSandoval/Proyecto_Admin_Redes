@@ -60,6 +60,7 @@ public class Controller_Login {
                         Stage stageprogram = new Stage();
                         stageprogram.setScene(new Scene(program));
                         stageprogram.initModality(Modality.APPLICATION_MODAL);
+                        stageprogram.getIcons().add( new Image(getClass().getResourceAsStream("/img/logo_AN.png")));
                         stageprogram.show();
                     }
                     else{
@@ -71,6 +72,7 @@ public class Controller_Login {
                         Stage stageprogram = new Stage();
                         stageprogram.setScene(new Scene(program));
                         stageprogram.initModality(Modality.APPLICATION_MODAL);
+                        stageprogram.getIcons().add( new Image(getClass().getResourceAsStream("/img/logo_AN.png")));
                         stageprogram.show();
                         System.out.println("Usuarios incorrectos");
                         txtUsuario.setText("");
