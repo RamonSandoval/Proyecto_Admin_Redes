@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -13,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.AlfaNetworkController">
+<Pane prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.AlfaNetworkController">
     <children>
 
         <Label fx:id="welcomeText" layoutX="185.0" layoutY="204.0" prefHeight="17.0" prefWidth="79.0" />
@@ -33,9 +38,9 @@
             </menus>
         </MenuBar>
         <Text fx:id="errorIP" fill="RED" layoutX="226.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="148.5078125" />
-        <Pane fx:id="validIP" layoutX="392.0" layoutY="76.0" prefHeight="16.0" prefWidth="17.0" style="-fx-background-color: #73ff00;" />
+        <Pane fx:id="validIP" layoutX="505.0" layoutY="189.0" prefHeight="16.0" prefWidth="17.0" style="-fx-background-color: #73ff00;" />
         <Text fx:id="textValidIP" fill="WHITE" layoutX="137.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="39.13671875" />
-        <Pane fx:id="invalidIP" layoutX="449.0" layoutY="76.0" prefHeight="17.0" prefWidth="17.0" style="-fx-background-color: #8d8d8d;" />
+        <Pane fx:id="invalidIP" layoutX="562.0" layoutY="189.0" prefHeight="17.0" prefWidth="17.0" style="-fx-background-color: #8d8d8d;" />
         <Text fx:id="textInvalidIP" fill="WHITE" layoutX="23.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.8125" />
         <Pane layoutY="26.0" prefHeight="32.0" prefWidth="600.0" style="-fx-background-color: white;">
             <children>
@@ -81,7 +86,12 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextArea fx:id="area_verde" layoutX="375.0" layoutY="103.0" prefHeight="172.0" prefWidth="24.0" style="-fx-text-fill: #73ff00; -fx-font-size: 15; -fx-highlight-fill: #292929;" />
-      <TextArea fx:id="area_gris" layoutX="432.0" layoutY="103.0" prefHeight="172.0" prefWidth="24.0" style="-fx-text-fill: #8d8d8d; -fx-font-size: 15;" />
+      <TextArea fx:id="area_verde" layoutX="375.0" layoutY="103.0" prefHeight="172.0" prefWidth="39.0" style="-fx-text-fill: #73ff00; -fx-font-size: 15; -fx-highlight-fill: #292929;" />
+      <TextArea fx:id="area_gris" layoutX="414.0" layoutY="103.0" prefHeight="172.0" prefWidth="39.0" style="-fx-text-fill: #8d8d8d; -fx-font-size: 15;" />
+      <Text fill="WHITE" layoutX="385.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indicador">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
     </children>
 </Pane>
