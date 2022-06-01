@@ -152,14 +152,14 @@ public class AlfaNetworkController {
             for(i=Integer.valueOf(inicio);i<Integer.valueOf(limite); i++){
                 ip=InetAddress.getByName(seg+i);
                 if(ip.isReachable(2050)){
-                    String valido = "\t  "+ip+"\t\t\t\tvalido";
+                    String valido = "\t  "+ip+"\t\t\t\tvalido "+area_verde;
                     //listIP.getChildren().addAll(valido,area_verde );
                     lista_direcciones.add(valido);
                     //lista_direcciones.add(area_verde.getText());
                     //area_verde.appendText("  ■\n");
                     //area_gris.appendText("\n");
                 }else{
-                    String invalido = "\t  "+ip+"\t\t\t\tinvalido";
+                    String invalido = "\t  "+ip+"\t\t\t\tinvalido "+area_gris;
                     lista_direcciones.add(invalido);
                     //lista_direcciones.add(area_gris.getText());
                     //listIP.getChildren().addAll(invalido,area_gris);
