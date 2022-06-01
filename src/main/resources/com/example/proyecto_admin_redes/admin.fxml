@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -18,11 +19,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.AlfaNetworkController">
+<Pane prefHeight="313.0" prefWidth="500.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.AlfaNetworkController">
     <children>
 
         <Label fx:id="welcomeText" layoutX="185.0" layoutY="204.0" prefHeight="17.0" prefWidth="79.0" />
-        <MenuBar prefHeight="25.0" prefWidth="600.0">
+        <MenuBar prefHeight="25.0" prefWidth="500.0">
             <menus>
                 <Menu mnemonicParsing="false" text="Archivo">
                     <items>
@@ -35,14 +36,17 @@
                         <MenuItem mnemonicParsing="false" text="Acerca del Programa" />
                     </items>
                 </Menu>
+            <Menu mnemonicParsing="false" text="Opciones">
+               <items>
+                  <MenuItem fx:id="changeIP" mnemonicParsing="false" onAction="#exitApp" text="IP Scan" />
+               </items>
+            </Menu>
             </menus>
         </MenuBar>
         <Text fx:id="errorIP" fill="RED" layoutX="226.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="148.5078125" />
-        <Pane fx:id="validIP" layoutX="505.0" layoutY="189.0" prefHeight="16.0" prefWidth="17.0" style="-fx-background-color: #73ff00;" />
         <Text fx:id="textValidIP" fill="WHITE" layoutX="137.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="39.13671875" />
-        <Pane fx:id="invalidIP" layoutX="562.0" layoutY="189.0" prefHeight="17.0" prefWidth="17.0" style="-fx-background-color: #8d8d8d;" />
         <Text fx:id="textInvalidIP" fill="WHITE" layoutX="23.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.8125" />
-        <Pane layoutY="26.0" prefHeight="32.0" prefWidth="600.0" style="-fx-background-color: white;">
+        <Pane layoutY="26.0" prefHeight="32.0" prefWidth="500.0" style="-fx-background-color: white;">
             <children>
                 <TextField fx:id="direccionIp" layoutX="97.0" layoutY="4.0" prefHeight="25.0" prefWidth="186.0" />
               <Button layoutX="303.0" layoutY="4.0" onAction="#onSearchClick" style="-fx-background-color: #292929;" text="Verificar" textAlignment="CENTER" textFill="WHITE">
@@ -65,33 +69,42 @@
                       <Font name="System Bold" size="12.0" />
                   </font>
               </Button>
-            <ImageView fitHeight="32.0" fitWidth="24.0" layoutX="494.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="file:/C:/Users/ramon/Documents/Universidad%208vo/Administracion%20de%20redes/Proyecto_Admin_Redes/img/refresh.png" />
-               </image>
-            </ImageView>
             </children>
         </Pane>
-      <TextArea fx:id="listIP" layoutX="14.0" layoutY="103.0" prefHeight="172.0" prefWidth="355.0" style="-fx-text-fill: #000000; -fx-control-inner-background: #FFCC7E; -fx-highlight-fill: #f7a035;">
+      <TextArea fx:id="listIP2" layoutX="59.0" layoutY="-192.0" prefHeight="172.0" prefWidth="451.0" style="-fx-text-fill: #000000; -fx-control-inner-background: #FFCC7E; -fx-highlight-fill: #f7a035;">
          <font>
             <Font size="14.0" />
          </font></TextArea>
-      <Text fill="WHITE" layoutX="64.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion IP">
+      <Text fill="WHITE" layoutX="54.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion IP">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="264.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado">
+      <Text fill="WHITE" layoutX="219.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextArea fx:id="area_verde" layoutX="375.0" layoutY="103.0" prefHeight="172.0" prefWidth="39.0" style="-fx-text-fill: #73ff00; -fx-font-size: 15; -fx-highlight-fill: #292929;" />
-      <TextArea fx:id="area_gris" layoutX="414.0" layoutY="103.0" prefHeight="172.0" prefWidth="39.0" style="-fx-text-fill: #8d8d8d; -fx-font-size: 15;" />
-      <Text fill="WHITE" layoutX="385.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indicador">
+      <TextFlow fx:id="listIP" layoutX="15.0" layoutY="100.0" prefHeight="200.0" prefWidth="278.0" style="-fx-background-color: white;" />
+      <Text fill="WHITE" layoutX="369.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva IP">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
+      <TextField fx:id="newIP" layoutX="322.0" layoutY="155.0" />
+      <Pane layoutX="314.0" layoutY="275.0" prefHeight="16.0" prefWidth="16.0" style="-fx-background-color: #47ED04FF;" />
+      <Pane layoutX="403.0" layoutY="276.0" prefHeight="16.0" prefWidth="16.0" style="-fx-background-color: #7F7F7FFF;" />
+      <Text fill="WHITE" layoutX="338.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="431.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No activo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="range1" layoutX="350.0" layoutY="188.0" prefHeight="25.0" prefWidth="39.0" />
+      <TextField fx:id="range2" layoutX="403.0" layoutY="188.0" prefHeight="25.0" prefWidth="42.0" />
     </children>
 </Pane>

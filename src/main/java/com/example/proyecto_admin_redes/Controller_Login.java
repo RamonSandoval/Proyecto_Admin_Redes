@@ -58,6 +58,8 @@ public class Controller_Login {
                         FXMLLoader loadProgram = new FXMLLoader(AlfaNetwork.class.getResource("admin.fxml"));
                         Parent program = (Parent) loadProgram.load(); //FXMLLoader.load(getClass().getResource("login.fxml"));
                         Stage stageprogram = new Stage();
+                        stage.setResizable(false);
+                        stageprogram.setResizable(false);
                         stageprogram.setScene(new Scene(program));
                         stageprogram.initModality(Modality.APPLICATION_MODAL);
                         stageprogram.getIcons().add( new Image(getClass().getResourceAsStream("/img/logo_AN.png")));
@@ -71,6 +73,8 @@ public class Controller_Login {
                         Parent program = (Parent) loadProgram.load(); //FXMLLoader.load(getClass().getResource("login.fxml"));
                         Stage stageprogram = new Stage();
                         stageprogram.setScene(new Scene(program));
+                        stage.setResizable(false);
+                        stageprogram.setResizable(false);
                         stageprogram.initModality(Modality.APPLICATION_MODAL);
                         stageprogram.getIcons().add( new Image(getClass().getResourceAsStream("/img/logo_AN.png")));
                         stageprogram.show();

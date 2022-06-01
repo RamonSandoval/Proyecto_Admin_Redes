@@ -20,6 +20,7 @@ public class AlfaNetwork extends Application {
         stage.getIcons().add( new Image(getClass().getResourceAsStream("/img/logo_AN.png")));
         //stage.setResizable(false);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
     }

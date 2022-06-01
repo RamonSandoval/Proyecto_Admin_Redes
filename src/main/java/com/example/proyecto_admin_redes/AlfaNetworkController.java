@@ -12,11 +12,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
+import javafx.scene.text.*;
 import javafx.scene.control.Label;
-import javafx.scene.text.Font;
 import javafx.scene.paint.Color;
 import javafx.scene.image.Image;
 
@@ -56,11 +53,17 @@ public class AlfaNetworkController {
     @FXML
     private Text textInvalidIP;
     @FXML
-    private TextArea listIP;
+    private TextFlow listIP;
     @FXML
     private TextArea area_verde;
     @FXML
     private TextArea area_gris;
+    @FXML
+    private TextField newIP;
+    @FXML
+    private  TextField range1;
+    @FXML
+    private TextField range2;
 
     private boolean validarIP(String ip) {
         boolean val = false;
@@ -76,7 +79,12 @@ public class AlfaNetworkController {
         //validIP.setVisible(false);
         //invalidIP.setVisible(false);
         textValidIP.setText("");
+        listIP.getChildren().clear();
         textInvalidIP.setText("");
+        Text area_verde = new Text("■");
+        area_verde.setStyle("-fx-fill: #47ED04 ;-fx-font-size: 20px");
+        Text area_gris = new Text("■");
+        area_gris.setStyle("-fx-fill: #7f7f7f;-fx-font-size: 20px ");
 
         //Mostrar estatus de la IP
         //Text statValid = new Text("0");
@@ -93,18 +101,20 @@ public class AlfaNetworkController {
 
                     //validIP.setVisible(true);
                     direccionIp.setText("");
-                    listIP.appendText("\t"+ip+"\t\t\t\t\t\t  Activo\n");
-                    area_verde.appendText("  ■\n");
-                    area_gris.appendText("\n");
+                    Text valido = new Text("\t  "+ip+"\t\t\t\t");
+                    listIP.getChildren().addAll(valido,area_verde);
+                    //area_verde.appendText("  ■\n");
+                    //area_gris.appendText("\n");
                     direccion_ip.setEstatus("Activo");
                     crud.create(direccion_ip);
 
 
                 } else {
                     direccionIp.setText("");
-                    listIP.appendText("\t"+ip+ "\t\t\t\t\t\tNo activo\n");
-                    area_gris.appendText("  ■\n");
-                    area_verde.appendText("\n");
+                    Text invalido = new Text("\t  "+ip+"\t\t\t\t");
+                    listIP.getChildren().addAll(invalido,area_gris);
+                    //area_gris.appendText("  ■\n");
+                    //area_verde.appendText("\n");
                     //invalidIP.setVisible(true);
                     direccion_ip.setEstatus("No Activo");
                     crud.create(direccion_ip);
@@ -120,24 +130,31 @@ public class AlfaNetworkController {
 
     @FXML
     protected void Scann(ActionEvent event) throws UnknownHostException {
-        listIP.setText("");
-        area_verde.setText("");
-        area_gris.setText("");
+        Text clearField = new Text("");
+        listIP.getChildren().add(clearField);
+        Text area_verde = new Text("■");
+        area_verde.setStyle("-fx-fill: #47ED04;-fx-font-size: 20px ");
+        Text area_gris = new Text("■");
+        area_gris.setStyle("-fx-fill: #7f7f7f ;-fx-font-size: 20px");
         //Estatus.setText("");
+
+
         int i;
-        String seg="192.168.1.";
+        String seg= newIP.getText();
         InetAddress ip;
         try{
-            for(i=70;i<80; i++){
+            for(i=70;i<230; i++){
                 ip=InetAddress.getByName(seg+i);
-                if(ip.isReachable(250)){
-                    listIP.appendText("\t"+ip+"\t\t\t\t\tActivo\n");
-                    area_verde.appendText("  ■\n");
-                    area_gris.appendText("\n");
+                if(ip.isReachable(2050)){
+                    Text valido = new Text("\t  "+ip+"\t\t\t\t");
+                    listIP.getChildren().addAll(valido,area_verde );
+                    //area_verde.appendText("  ■\n");
+                    //area_gris.appendText("\n");
                 }else{
-                    listIP.appendText("\t"+ip+" \t\t\t\t\tNo activo\n");
-                    area_gris.appendText("  ■\n");
-                    area_verde.appendText("\n");
+                    Text invalido = new Text("\t  "+ip+"\t\t\t\t");
+                    listIP.getChildren().addAll(invalido,area_gris);
+                    //area_gris.appendText("  ■\n");
+                    //area_verde.appendText("\n");
                 }
             }
         }catch(Exception e){
@@ -166,13 +183,14 @@ public class AlfaNetworkController {
 
     @FXML
     protected void clearIP(ActionEvent event) {
-        direccionIp.setText("");
-        listIP.setText("");
-        area_gris.setText("");
-        area_verde.setText("");
+        listIP.getChildren().clear();
         //Estatus.setText("");
         //invalidIP.setVisible(false);
         //validIP.setVisible(false);
 
+    }
+    @FXML
+    protected void setIP (ActionEvent event){
+        System.exit(0);
     }
 }
