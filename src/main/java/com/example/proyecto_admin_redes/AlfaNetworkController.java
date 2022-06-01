@@ -135,13 +135,12 @@ public class AlfaNetworkController {
     protected void Scann(ActionEvent event) throws UnknownHostException {
         Text clearField = new Text("");
         listIP.getChildren().add(clearField);
-        Text area_verde = new Text("■");
-        area_verde.setStyle("-fx-fill: #47ED04;-fx-font-size: 20px ");
-        Text area_gris = new Text("■");
-        area_gris.setStyle("-fx-fill: #7f7f7f ;-fx-font-size: 20px");
+        //Text area_verde = new Text("1");
+        //area_verde.setStyle("-fx-fill: #47ED04;-fx-font-size: 20px ");
+        //Text area_gris = new Text("0");
+        //area_gris.setStyle("-fx-fill: #7f7f7f ;-fx-font-size: 20px");
         //Estatus.setText("");
 
-        List<String> lista_direcciones = new ArrayList<>();
 
         int i;
         String seg= newIP.getText();
@@ -149,26 +148,29 @@ public class AlfaNetworkController {
         String limite = range2.getText();
         InetAddress ip;
         try{
-            for(i=Integer.valueOf(inicio);i<Integer.valueOf(limite); i++){
+            for(i=Integer.valueOf(inicio);i<=Integer.valueOf(limite); i++){
                 ip=InetAddress.getByName(seg+i);
                 if(ip.isReachable(2050)){
-                    String valido = "\t  "+ip+"\t\t\t\tvalido";
-                    //listIP.getChildren().addAll(valido,area_verde );
-                    lista_direcciones.add(valido);
-                    //lista_direcciones.add(area_verde.getText());
+                    Text valido = new Text("\t  "+ip+"\t\t\t\t");
+                    Text area_verde = new Text("■");
+                    area_verde.setStyle("-fx-fill: #47ED04 ;-fx-font-size: 20px");
+                    listIP.getChildren().addAll(valido,area_verde);
+
                     //area_verde.appendText("  ■\n");
                     //area_gris.appendText("\n");
                 }else{
-                    String invalido = "\t  "+ip+"\t\t\t\tinvalido";
-                    lista_direcciones.add(invalido);
-                    //lista_direcciones.add(area_gris.getText());
-                    //listIP.getChildren().addAll(invalido,area_gris);
+                    Text invalido = new Text("\t  "+ip+"\t\t\t\t");
+                    Text area_gris = new Text("■");
+                    area_gris.setStyle("-fx-fill: #7f7f7f;-fx-font-size: 20px ");
+                    listIP.getChildren().addAll(invalido,area_gris);
+                    //listIP.getChildren().addAll(area_gris);
                     //area_gris.appendText("  ■\n");
                     //area_verde.appendText("\n");
                 }
             }
-            Text salida = new Text(lista_direcciones.toString());
-            listIP.getChildren().addAll(salida,area_gris,area_verde);
+
+            //listIP.getChildren().addAll(lista_direcciones);
+
 
 
         }catch(Exception e){
