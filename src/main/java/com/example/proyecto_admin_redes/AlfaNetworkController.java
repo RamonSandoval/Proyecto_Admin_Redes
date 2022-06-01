@@ -24,6 +24,8 @@ import java.net.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.format.TextStyle;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class AlfaNetworkController {
@@ -119,6 +121,7 @@ public class AlfaNetworkController {
                     direccion_ip.setEstatus("No Activo");
                     crud.create(direccion_ip);
                 }
+
             } catch (IOException ex) {
                 System.out.println(ex);
             }
@@ -138,25 +141,36 @@ public class AlfaNetworkController {
         area_gris.setStyle("-fx-fill: #7f7f7f ;-fx-font-size: 20px");
         //Estatus.setText("");
 
+        List<String> lista_direcciones = new ArrayList<>();
 
         int i;
         String seg= newIP.getText();
+        String inicio = range1.getText();
+        String limite = range2.getText();
         InetAddress ip;
         try{
-            for(i=70;i<230; i++){
+            for(i=Integer.valueOf(inicio);i<Integer.valueOf(limite); i++){
                 ip=InetAddress.getByName(seg+i);
                 if(ip.isReachable(2050)){
-                    Text valido = new Text("\t  "+ip+"\t\t\t\t");
-                    listIP.getChildren().addAll(valido,area_verde );
+                    String valido = "\t  "+ip+"\t\t\t\tvalido";
+                    //listIP.getChildren().addAll(valido,area_verde );
+                    lista_direcciones.add(valido);
+                    //lista_direcciones.add(area_verde.getText());
                     //area_verde.appendText("  ■\n");
                     //area_gris.appendText("\n");
                 }else{
-                    Text invalido = new Text("\t  "+ip+"\t\t\t\t");
-                    listIP.getChildren().addAll(invalido,area_gris);
+                    String invalido = "\t  "+ip+"\t\t\t\tinvalido";
+                    lista_direcciones.add(invalido);
+                    //lista_direcciones.add(area_gris.getText());
+                    //listIP.getChildren().addAll(invalido,area_gris);
                     //area_gris.appendText("  ■\n");
                     //area_verde.appendText("\n");
                 }
             }
+            Text salida = new Text(lista_direcciones.toString());
+            listIP.getChildren().addAll(salida,area_gris,area_verde);
+
+
         }catch(Exception e){
         }
         /*
