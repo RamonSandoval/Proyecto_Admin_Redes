@@ -28,9 +28,9 @@
             </Menu>
             </menus>
         </MenuBar>
-        <Text fx:id="errorIP" fill="RED" layoutX="226.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="148.5078125" />
-        <Text fx:id="textValidIP" fill="WHITE" layoutX="137.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="39.13671875" />
-        <Text fx:id="textInvalidIP" fill="WHITE" layoutX="23.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.8125" />
+        <Text fx:id="errorIP" fill="RED" layoutX="330.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="148.5078125" />
+        <Text fx:id="textValidIP" fill="WHITE" layoutX="369.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="39.13671875" />
+        <Text fx:id="textInvalidIP" fill="WHITE" layoutX="365.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.8125" />
         <Pane layoutY="26.0" prefHeight="32.0" prefWidth="500.0" style="-fx-background-color: white;">
             <children>
                 <TextField fx:id="direccionIp" layoutX="97.0" layoutY="4.0" prefHeight="25.0" prefWidth="186.0" />

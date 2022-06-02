@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
@@ -33,9 +35,21 @@ public class Controller_Login {
 
 
     @FXML
-    private void btnLogin(ActionEvent event) {
+    private void btnLogin(ActionEvent event) throws IOException {
         String user = txtUsuario.getText();
         String pass = txtPassword.getText();
+        if(txtPassword.getText().isEmpty()){
+            Alert alerta = new Alert (Alert.AlertType.CONFIRMATION);
+
+            alerta.setHeaderText(null);
+            alerta.setTitle("Alerta");
+            alerta.setContentText("Ha ingresado en modo usuario\n" + "¿Desea Continuar?");
+            alerta.showAndWait();
+            if(alerta.getResult() == ButtonType.CANCEL){
+                return;
+
+            }
+        }
 
             if(user.equals("") && pass.equals("")){
                 errorUser.setVisible(true);
@@ -89,9 +103,7 @@ public class Controller_Login {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                if(txtPassword == null){
-                    
-                }
+
 
 
             }
