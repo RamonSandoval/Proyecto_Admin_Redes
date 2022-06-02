@@ -89,6 +89,9 @@ public class Controller_Login {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                if(txtPassword == null){
+                    
+                }
 
 
             }

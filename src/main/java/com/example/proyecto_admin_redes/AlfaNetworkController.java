@@ -153,6 +153,7 @@ public class AlfaNetworkController {
                 ip=InetAddress.getByName(seg+i);
                 if(ip.isReachable(2050)){
                     Text valido = new Text("\t   "+ip.toString().replaceAll("/","")+"\t\t\t\t");
+                    //ip.toString().replaceAll("/","");
                     Text area_verde = new Text("■\n");
                     area_verde.setStyle("-fx-fill: #47ED04 ;-fx-font-size: 20px");
                     listIP.getChildren().addAll(valido,area_verde);
