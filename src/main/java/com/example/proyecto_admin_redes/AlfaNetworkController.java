@@ -58,10 +58,6 @@ public class AlfaNetworkController {
     @FXML
     private TextFlow listIP;
     @FXML
-    private TextArea area_verde;
-    @FXML
-    private TextArea area_gris;
-    @FXML
     private TextField newIP;
     @FXML
     private  TextField range1;
@@ -79,8 +75,7 @@ public class AlfaNetworkController {
     protected void onSearchClick(ActionEvent event) {
         InetAddress ping;
         String ip = direccionIp.getText(); // Direccion IP de la RD
-        //validIP.setVisible(false);
-        //invalidIP.setVisible(false);
+
         textValidIP.setText("");
         listIP.getChildren().clear();
         textInvalidIP.setText("");
@@ -88,60 +83,40 @@ public class AlfaNetworkController {
         area_verde.setStyle("-fx-fill: #47ED04 ;-fx-font-size: 20px");
         Text area_gris = new Text("■");
         area_gris.setStyle("-fx-fill: #7f7f7f;-fx-font-size: 20px ");
-
-        //Mostrar estatus de la IP
-        //Text statValid = new Text("0");
-
-
-
         if (direccionIp.getText() == ("")) {
             errorIP.setText("Ingrese una direccion IP");
+            errorIP.setVisible(true);
         } else
             direccion_ip.setIp(ip);
             try {
                 ping = InetAddress.getByName(ip);
                 if (ping.isReachable(3000)) {
-
-                    //validIP.setVisible(true);
                     direccionIp.setText("");
                     Text valido = new Text("\t  "+ip+"\t\t\t\t");
                     listIP.getChildren().addAll(valido,area_verde);
-                    //area_verde.appendText("  ■\n");
-                    //area_gris.appendText("\n");
                     direccion_ip.setEstatus("Activo");
                     crud.create(direccion_ip);
-
-
                 } else {
                     direccionIp.setText("");
                     Text invalido = new Text("\t  "+ip+"\t\t\t\t");
                     listIP.getChildren().addAll(invalido,area_gris);
-                    //area_gris.appendText("  ■\n");
-                    //area_verde.appendText("\n");
-                    //invalidIP.setVisible(true);
+
                     direccion_ip.setEstatus("No Activo");
                     crud.create(direccion_ip);
                 }
-
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null,ex );
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Mensaje de Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Ingrese datos correctos, porfavor!");
+                alert.showAndWait();
             }
-
-
-
-
     }
 
     @FXML
     protected void Scann(ActionEvent event) throws UnknownHostException {
         Text clearField = new Text("");
         listIP.getChildren().add(clearField);
-        //Text area_verde = new Text("1");
-        //area_verde.setStyle("-fx-fill: #47ED04;-fx-font-size: 20px ");
-        //Text area_gris = new Text("0");
-        //area_gris.setStyle("-fx-fill: #7f7f7f ;-fx-font-size: 20px");
-        //Estatus.setText("");
-
 
         int i;
         String seg= newIP.getText();
@@ -157,26 +132,19 @@ public class AlfaNetworkController {
                     Text area_verde = new Text("■\n");
                     area_verde.setStyle("-fx-fill: #47ED04 ;-fx-font-size: 20px");
                     listIP.getChildren().addAll(valido,area_verde);
-
-                    //area_verde.appendText("  ■\n");
-                    //area_gris.appendText("\n");
                 }else{
                     Text invalido = new Text("\t   "+ip.toString().replaceAll("/","")+"\t\t\t\t");
                     Text area_gris = new Text("■\n");
                     area_gris.setStyle("-fx-fill: #7f7f7f;-fx-font-size: 20px ");
                     listIP.getChildren().addAll(invalido,area_gris);
-                    //listIP.getChildren().addAll(area_gris);
-                    //area_gris.appendText("  ■\n");
-                    //area_verde.appendText("\n");
                 }
             }
-
-            //listIP.getChildren().addAll(lista_direcciones);
-
-
-
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Error "+e);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Mensaje de Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Ingrese datos correctos, porfavor!");
+            alert.showAndWait();
         }
         /*
         String item = "";
@@ -206,11 +174,21 @@ public class AlfaNetworkController {
         newIP.setText("");
         range1.setText("");
         range2.setText("");
-        //Estatus.setText("");
-        //invalidIP.setVisible(false);
-        //validIP.setVisible(false);
+        direccionIp.setText("");
+        errorIP.setVisible(false);
 
     }
+    @FXML
+    protected void acercaDe(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Acerca del Programa");
+        alert.setHeaderText(null);
+        alert.setContentText("Programa elaborado por:\n\nGallegos Cabrera Luisa Aylin\n" +
+                "Sandoval Pérez Ramón\nRomero Galván Orlando\nRuíz Rodríguez Efraín");
+        alert.showAndWait();
+    }
+
+
     @FXML
     protected void setIP (ActionEvent event){
         System.exit(0);
