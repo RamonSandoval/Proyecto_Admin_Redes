@@ -44,12 +44,12 @@
                   <Font size="14.0" />
                </font>
             </Text>
-              <Button layoutX="377.0" layoutY="2.0" onAction="#clearIP" style="-fx-background-color: #f7a035;" text="Borrar" textAlignment="CENTER">
+              <Button layoutX="377.0" layoutY="4.0" onAction="#clearIP" style="-fx-background-color: #f7a035;" text="Limpiar Campos" textAlignment="CENTER">
                   <font>
                       <Font name="System Bold" size="12.0" />
                   </font>
               </Button>
-              <Button layoutX="440.0" layoutY="3.0" onAction="#Scann" style="-fx-background-color: #f7a035;" text="Scan" textAlignment="CENTER">
+              <Button layoutX="453.0" layoutY="106.0" onAction="#Scann" style="-fx-background-color: #f7a035;" text="Scan" textAlignment="CENTER">
                   <font>
                       <Font name="System Bold" size="12.0" />
                   </font>
@@ -75,12 +75,12 @@
             <TextFlow fx:id="listIP" layoutX="18.0" layoutY="101.0" prefHeight="200.0" prefWidth="278.0" style="-fx-background-color: white;" />
          </content>
       </ScrollPane>
-      <Text fill="WHITE" layoutX="369.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IP Scan">
+      <Text fill="WHITE" layoutX="369.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IP Scan">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="newIP" layoutX="322.0" layoutY="148.0" />
+      <TextField fx:id="newIP" layoutX="322.0" layoutY="132.0" prefHeight="25.0" prefWidth="126.0" />
       <Pane layoutX="320.0" layoutY="284.0" prefHeight="16.0" prefWidth="16.0" style="-fx-background-color: #47ED04FF;" />
       <Pane layoutX="409.0" layoutY="285.0" prefHeight="16.0" prefWidth="16.0" style="-fx-background-color: #7F7F7FFF;" />
       <Text fill="WHITE" layoutX="344.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activo">
@@ -93,29 +93,29 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="range1" layoutX="339.0" layoutY="220.0" prefHeight="25.0" prefWidth="39.0" />
-      <TextField fx:id="range2" layoutX="409.0" layoutY="220.0" prefHeight="25.0" prefWidth="42.0" />
-      <Text fill="WHITE" layoutX="324.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ejemplo: 192.168.1.">
+      <TextField fx:id="range1" layoutX="355.0" layoutY="216.0" prefHeight="25.0" prefWidth="39.0" />
+      <TextField fx:id="range2" layoutX="425.0" layoutY="216.0" prefHeight="25.0" prefWidth="42.0" />
+      <Text fill="WHITE" layoutX="324.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ejemplo: 192.168.1.">
          <font>
             <Font size="10.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="371.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rango">
+      <Text fill="WHITE" layoutX="387.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rango">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="385.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+      <Text fill="WHITE" layoutX="401.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
          <font>
             <Font size="44.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="345.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desde" wrappingWidth="38.541015625">
+      <Text fill="WHITE" layoutX="361.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desde" wrappingWidth="38.541015625">
          <font>
             <Font size="10.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="418.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hasta" wrappingWidth="38.541015625">
+      <Text fill="WHITE" layoutX="434.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hasta" wrappingWidth="38.541015625">
          <font>
             <Font size="10.0" />
          </font>
