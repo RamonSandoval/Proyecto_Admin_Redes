@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<Pane prefHeight="313.0" prefWidth="500.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.AlfaNetworkController">
+<Pane prefHeight="334.0" prefWidth="500.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyecto_admin_redes.AlfaNetworkController">
     <children>
 
         <Label fx:id="welcomeText" layoutX="185.0" layoutY="204.0" prefHeight="17.0" prefWidth="79.0" />
@@ -90,25 +75,50 @@
             <TextFlow fx:id="listIP" layoutX="18.0" layoutY="101.0" prefHeight="200.0" prefWidth="278.0" style="-fx-background-color: white;" />
          </content>
       </ScrollPane>
-      <Text fill="WHITE" layoutX="369.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva IP">
+      <Text fill="WHITE" layoutX="369.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IP Scan">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="newIP" layoutX="322.0" layoutY="155.0" />
-      <Pane layoutX="314.0" layoutY="275.0" prefHeight="16.0" prefWidth="16.0" style="-fx-background-color: #47ED04FF;" />
-      <Pane layoutX="403.0" layoutY="276.0" prefHeight="16.0" prefWidth="16.0" style="-fx-background-color: #7F7F7FFF;" />
-      <Text fill="WHITE" layoutX="338.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activo">
+      <TextField fx:id="newIP" layoutX="322.0" layoutY="148.0" />
+      <Pane layoutX="320.0" layoutY="284.0" prefHeight="16.0" prefWidth="16.0" style="-fx-background-color: #47ED04FF;" />
+      <Pane layoutX="409.0" layoutY="285.0" prefHeight="16.0" prefWidth="16.0" style="-fx-background-color: #7F7F7FFF;" />
+      <Text fill="WHITE" layoutX="344.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activo">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="431.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No activo">
+      <Text fill="WHITE" layoutX="437.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No activo">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="range1" layoutX="350.0" layoutY="188.0" prefHeight="25.0" prefWidth="39.0" />
-      <TextField fx:id="range2" layoutX="403.0" layoutY="188.0" prefHeight="25.0" prefWidth="42.0" />
+      <TextField fx:id="range1" layoutX="339.0" layoutY="220.0" prefHeight="25.0" prefWidth="39.0" />
+      <TextField fx:id="range2" layoutX="409.0" layoutY="220.0" prefHeight="25.0" prefWidth="42.0" />
+      <Text fill="WHITE" layoutX="324.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ejemplo: 192.168.1.">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="371.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rango">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="385.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+         <font>
+            <Font size="44.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="345.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desde" wrappingWidth="38.541015625">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="418.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hasta" wrappingWidth="38.541015625">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
     </children>
 </Pane>

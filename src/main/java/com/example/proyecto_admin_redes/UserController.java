@@ -12,14 +12,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
+import javafx.scene.text.*;
 import javafx.scene.control.Label;
-import javafx.scene.text.Font;
 import javafx.scene.paint.Color;
 
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.*;
 import java.sql.PreparedStatement;
@@ -36,6 +34,7 @@ public class UserController {
     Crud crud = new Crud();
     PreparedStatement ps;
     ResultSet rs;
+    public static final String green = "\u001B[32m";
     @FXML
     private Label welcomeText;
     @FXML
@@ -53,9 +52,17 @@ public class UserController {
     @FXML
     private Text textInvalidIP;
     @FXML
-    private TextArea listIP;
+    private TextFlow listIP;
     @FXML
-    private TextArea Estatus;
+    private TextArea area_verde;
+    @FXML
+    private TextArea area_gris;
+    @FXML
+    private TextField newIP;
+    @FXML
+    private  TextField range1;
+    @FXML
+    private TextField range2;
 
     private boolean validarIP(String ip) {
         boolean val = false;
@@ -68,13 +75,18 @@ public class UserController {
     protected void onSearchClick(ActionEvent event) {
         InetAddress ping;
         String ip = direccionIp.getText(); // Direccion IP de la RD
-        validIP.setVisible(false);
-        invalidIP.setVisible(false);
+        //validIP.setVisible(false);
+        //invalidIP.setVisible(false);
         textValidIP.setText("");
+        listIP.getChildren().clear();
         textInvalidIP.setText("");
+        Text area_verde = new Text("■");
+        area_verde.setStyle("-fx-fill: #47ED04 ;-fx-font-size: 20px");
+        Text area_gris = new Text("■");
+        area_gris.setStyle("-fx-fill: #7f7f7f;-fx-font-size: 20px ");
 
         //Mostrar estatus de la IP
-        Text statValid = new Text("0");
+        //Text statValid = new Text("0");
 
 
 
@@ -86,21 +98,29 @@ public class UserController {
             ping = InetAddress.getByName(ip);
             if (ping.isReachable(3000)) {
 
-                validIP.setVisible(true);
+                //validIP.setVisible(true);
                 direccionIp.setText("");
-                listIP.appendText("\t"+ip.replaceAll("/","")+"\t\t\t\tActivo" +"\t\t\t"+statValid.getText());
+                Text valido = new Text("\t  "+ip+"\t\t\t\t");
+                listIP.getChildren().addAll(valido,area_verde);
+                //area_verde.appendText("  ■\n");
+                //area_gris.appendText("\n");
                 direccion_ip.setEstatus("Activo");
                 crud.create(direccion_ip);
 
 
             } else {
-                listIP.appendText("\t"+ip.replaceAll("/","")+ " \t\t\t\t\tNo activo"+"\t\t\t");
-                invalidIP.setVisible(true);
+                direccionIp.setText("");
+                Text invalido = new Text("\t  "+ip+"\t\t\t\t");
+                listIP.getChildren().addAll(invalido,area_gris);
+                //area_gris.appendText("  ■\n");
+                //area_verde.appendText("\n");
+                //invalidIP.setVisible(true);
                 direccion_ip.setEstatus("No Activo");
                 crud.create(direccion_ip);
             }
+
         } catch (IOException ex) {
-            System.out.println(ex);
+            JOptionPane.showMessageDialog(null,ex );
         }
 
 
@@ -110,25 +130,48 @@ public class UserController {
 
     @FXML
     protected void Scann(ActionEvent event) throws UnknownHostException {
-        listIP.setText("");
-        Estatus.setText("");
-        int con_d=0;
-        int con_n=0;
+        Text clearField = new Text("");
+        listIP.getChildren().add(clearField);
+        //Text area_verde = new Text("1");
+        //area_verde.setStyle("-fx-fill: #47ED04;-fx-font-size: 20px ");
+        //Text area_gris = new Text("0");
+        //area_gris.setStyle("-fx-fill: #7f7f7f ;-fx-font-size: 20px");
+        //Estatus.setText("");
+
+
         int i;
-        String seg="192.168.1.";
+        String seg= newIP.getText();
+        String inicio = range1.getText();
+        String limite = range2.getText();
         InetAddress ip;
         try{
-            for(i=70;i<80; i++){
+            for(i=Integer.valueOf(inicio);i<=Integer.valueOf(limite); i++){
                 ip=InetAddress.getByName(seg+i);
-                if(ip.isReachable(250)){
-                    listIP.appendText("\t"+ip+"\t\t\t\t\tActivo\n");
-                    con_d++;
+                if(ip.isReachable(2050)){
+                    Text valido = new Text("\t   "+ip.toString().replaceAll("/","")+"\t\t\t\t");
+                    Text area_verde = new Text("■\n");
+                    area_verde.setStyle("-fx-fill: #47ED04 ;-fx-font-size: 20px");
+                    listIP.getChildren().addAll(valido,area_verde);
+
+                    //area_verde.appendText("  ■\n");
+                    //area_gris.appendText("\n");
                 }else{
-                    listIP.appendText("\t"+ip+" \t\t\t\t\tNo activo\n");
-                    con_n++;
+                    Text invalido = new Text("\t   "+ip.toString().replaceAll("/","")+"\t\t\t\t");
+                    Text area_gris = new Text("■\n");
+                    area_gris.setStyle("-fx-fill: #7f7f7f;-fx-font-size: 20px ");
+                    listIP.getChildren().addAll(invalido,area_gris);
+                    //listIP.getChildren().addAll(area_gris);
+                    //area_gris.appendText("  ■\n");
+                    //area_verde.appendText("\n");
                 }
             }
+
+            //listIP.getChildren().addAll(lista_direcciones);
+
+
+
         }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error "+e);
         }
         /*
         String item = "";
@@ -154,11 +197,17 @@ public class UserController {
 
     @FXML
     protected void clearIP(ActionEvent event) {
-        direccionIp.setText("");
-        listIP.setText("");
-        Estatus.setText("");
-        invalidIP.setVisible(false);
-        validIP.setVisible(false);
+        listIP.getChildren().clear();
+        newIP.setText("");
+        range1.setText("");
+        range2.setText("");
+        //Estatus.setText("");
+        //invalidIP.setVisible(false);
+        //validIP.setVisible(false);
 
+    }
+    @FXML
+    protected void setIP (ActionEvent event){
+        System.exit(0);
     }
 }
