@@ -1,5 +1,6 @@
 package com.example.proyecto_admin_redes;
 
+import javax.swing.JOptionPane;
 import Base.db.ConexionBD;
 import Base.db.Crud;
 import Base.db.Ips;
@@ -123,7 +124,7 @@ public class AlfaNetworkController {
                 }
 
             } catch (IOException ex) {
-                System.out.println(ex);
+                JOptionPane.showMessageDialog(null,ex );
             }
 
 
@@ -174,6 +175,7 @@ public class AlfaNetworkController {
 
 
         }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error "+e);
         }
         /*
         String item = "";
