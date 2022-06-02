@@ -151,16 +151,16 @@ public class AlfaNetworkController {
             for(i=Integer.valueOf(inicio);i<=Integer.valueOf(limite); i++){
                 ip=InetAddress.getByName(seg+i);
                 if(ip.isReachable(2050)){
-                    Text valido = new Text("\t  "+ip+"\t\t\t\t");
-                    Text area_verde = new Text("■");
+                    Text valido = new Text("\t   "+ip+"\t\t\t\t");
+                    Text area_verde = new Text("■\n");
                     area_verde.setStyle("-fx-fill: #47ED04 ;-fx-font-size: 20px");
                     listIP.getChildren().addAll(valido,area_verde);
 
                     //area_verde.appendText("  ■\n");
                     //area_gris.appendText("\n");
                 }else{
-                    Text invalido = new Text("\t  "+ip+"\t\t\t\t");
-                    Text area_gris = new Text("■");
+                    Text invalido = new Text("\t   "+ip+"\t\t\t\t");
+                    Text area_gris = new Text("■\n");
                     area_gris.setStyle("-fx-fill: #7f7f7f;-fx-font-size: 20px ");
                     listIP.getChildren().addAll(invalido,area_gris);
                     //listIP.getChildren().addAll(area_gris);
@@ -200,6 +200,9 @@ public class AlfaNetworkController {
     @FXML
     protected void clearIP(ActionEvent event) {
         listIP.getChildren().clear();
+        newIP.setText("");
+        range1.setText("");
+        range2.setText("");
         //Estatus.setText("");
         //invalidIP.setVisible(false);
         //validIP.setVisible(false);
